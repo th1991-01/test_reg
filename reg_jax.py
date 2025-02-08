@@ -10,13 +10,13 @@ obs_log = np.load(env_name+"_obs_log.npy")
 act_log = np.load(env_name+"_act_log.npy")
 rew_log = np.load(env_name+"_rew_log.npy")
 deltaobs_log = np.load(env_name+"_deltaobs_log.npy")
+print("obs_log.shape:", obs_log.shape, "\nact_log.shape:", act_log.shape, "\nrew_log.shape:", rew_log.shape, "\ndeltaobs_log.shape:", deltaobs_log.shape)
 
 X = np.hstack([obs_log, act_log])
 Y = np.hstack([rew_log, deltaobs_log])
-print("obs_log.shape:", obs_log.shape, "act_log.shape:", act_log.shape, "rew_log.shape:", rew_log.shape)
-print("X.shape:", X.shape, "Y.shape:", Y.shape)
-
 X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=1)
+
+print("X_train.shape:", X_train.shape, "X_test.shape:", X_test.shape, "\ny_train.shape:", y_train.shape, "y_test.shape:", y_test.shape)
 
 
 import jax

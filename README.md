@@ -1,6 +1,6 @@
 install
 ```
-conda create -n hishiuma python==3.12
+conda create -n hishinuma python==3.12
 pip install -U "jax[cuda12]"
 pip install flax
 
