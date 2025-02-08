@@ -50,9 +50,6 @@ def update_params(reg_state, X, Y):
         loss = jnp.mean((pred - Y)**2)
         return loss
 
-    # grad_fn = jax.grad(loss_function)(reg_state.params)
-    # grads = grad_fn(reg_state.params)
-
     value_and_grad_fn = jax.value_and_grad(loss_function)
     loss_value, grads = value_and_grad_fn(reg_state.params)
 
