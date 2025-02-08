@@ -3,8 +3,11 @@ install
 conda create -n hishiuma python==3.12
 pip install -U "jax[cuda12]"
 pip install flax
-pip install gymnasium==0.29.1
+
 pip install scikit-learn matplotlib
+
+pip install gymnasium==0.29.1
+pip install gymnasium[mujoco]
 ```
 
 test env
@@ -15,6 +18,6 @@ $ python -c "import jax;print(jax.devices())"
 
 test reg
 ```
-python get_dataset_gym_pendulum.py
+python get_dataset_gym.py
 python reg_jax.py
 ```
